@@ -8,10 +8,13 @@ exports.getComponent = ->
   c.inPorts.add 'script',
     datatype: 'string'
 
+  c.inPorts.add 'config',
+    datatype: 'object'
+
   c.outPorts.add 'out',
     datatype: 'object'
 
-  c.outPorts.add 'error',
+  c.outPorts.add 'err',
     datatype: 'error'
 
   c.process (input, output) ->
