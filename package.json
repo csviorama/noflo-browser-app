@@ -15,10 +15,11 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "noflo": "^1.0.0",
+    "noflo": "^1.0.3",
     "noflo-core": "^0.5.0",
     "noflo-dom": "^0.3.0",
-    "noflo-interaction": "^0.3.0"
+    "noflo-interaction": "^0.3.0",
+    "noflo-filesystem": "^2.0.1"
   },
   "devDependencies": {
     "chai": "^4.0.0",
