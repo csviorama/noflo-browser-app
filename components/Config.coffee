@@ -4,5 +4,14 @@ exports.getComponent = ->
   c = new noflo.Component
   c.icon = 'cog'
   c.description = 'Config'
+
+  c.inPorts.add 'source',
+    datatype: 'string'
+
   c.outPorts.add 'out',
     datatype: 'object'
+
+  c.process (input, output) ->
+    output.send
+      out: {}
+    output.done()
