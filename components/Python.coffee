@@ -5,10 +5,13 @@ exports.getComponent = ->
   c.icon = 'cog'
   c.description = 'Invoke Python'
 
-  c.inPorts.add 'script',
+  c.inPorts.add 'source',
     datatype: 'string'
 
   c.inPorts.add 'config',
+    datatype: 'object'
+
+  c.inPorts.add 'data',
     datatype: 'object'
 
   c.outPorts.add 'out',

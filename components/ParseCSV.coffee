@@ -5,8 +5,11 @@ exports.getComponent = ->
   c.icon = 'cog'
   c.description = 'Parse CSV'
 
-  c.inPorts.add 'script',
+  c.inPorts.add 'source',
     datatype: 'string'
+
+  c.inPorts.add 'config',
+    datatype: 'object'
 
   c.outPorts.add 'out',
     datatype: 'object'

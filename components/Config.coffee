@@ -5,9 +5,6 @@ exports.getComponent = ->
   c.icon = 'cog'
   c.description = 'Config'
 
-  c.inPorts.add 'source',
-    datatype: 'string'
-
   c.outPorts.add 'out',
     datatype: 'object'
 
