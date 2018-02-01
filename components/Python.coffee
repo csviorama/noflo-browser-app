@@ -15,9 +15,9 @@ exports.getComponent = ->
     datatype: 'object'
 
   c.outPorts.add 'err',
-    datatype: 'error'
+    datatype: 'object'
 
   c.process (input, output) ->
     output.send
       out: {}
-    output.done()
+      output.done()
