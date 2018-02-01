@@ -1,0 +1,97 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "Network",
+        "environment": {
+            "type": "noflo-browser",
+            "content": "<button id='button'>Go!</button>\n<p id='message'></p>"
+        },
+        "icon": "cog"
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "csviorama-browser-app/Config_9yup2": {
+            "component": "csviorama-browser-app/Config",
+            "metadata": {
+                "label": "Config",
+                "x": 144,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "csviorama-browser-app/ParseCSV_tm838": {
+            "component": "csviorama-browser-app/ParseCSV",
+            "metadata": {
+                "label": "ParseCSV",
+                "x": 360,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "csviorama-browser-app/Python_iipzh": {
+            "component": "csviorama-browser-app/Python",
+            "metadata": {
+                "label": "Python",
+                "x": 540,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "csviorama-browser-app/Config_9yup2",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "csviorama-browser-app/ParseCSV_tm838",
+                "port": "config"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "csviorama-browser-app/ParseCSV_tm838",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "csviorama-browser-app/Python_iipzh",
+                "port": "data"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "csviorama-browser-app/Config_9yup2",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "csviorama-browser-app/Python_iipzh",
+                "port": "config"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "data": "example.csv",
+            "tgt": {
+                "process": "csviorama-browser-app/ParseCSV_tm838",
+                "port": "source"
+            }
+        },
+        {
+            "data": "example.py",
+            "tgt": {
+                "process": "csviorama-browser-app/Python_iipzh",
+                "port": "source"
+            }
+        }
+    ]
+}
